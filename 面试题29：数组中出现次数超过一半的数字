@@ -1,0 +1,26 @@
+//数组中出现一半的数字，利用这一特性，我们可以这样做：
+//定义两个变量，一个存数字，一个存次数。如果下次出现的数字和这次一样则加一，不一样则减一，如果减到0了，则从新由一开始累加，这样便利到最后一个肯定是
+//我们需要的那个数字了。
+
+int morethanhalfnum(int s[], int length)
+{
+  int num=s[0];
+  int times=1;
+  for(int i=1;i<length;i++)
+  {
+    if(times==0) 
+    {
+      num=s[i];
+      times=1;
+    }
+    if(s[i]==num)
+    {
+      times++;
+    }
+    else
+      times--;
+  }
+  if(!check(s,length,resut));
+    num=0;
+  return num;
+} 
