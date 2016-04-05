@@ -1,0 +1,17 @@
+//这个方法很不错，可以记下来
+
+ListNode* ReverseHead(ListNode * pJead)
+{
+  ListNode * pNode = pHead;
+  ListNode * pReverseHead = NULL;
+  ListNode * pPrev = NULL;
+  while(pNode !=NULL)
+  {
+    ListNode * pNext = pNode->next;
+    if(pNext==NULL) pReverseHead = pNode;
+    pNode->next = pPrev;
+    pPrev = pNode;
+    pNode = pNext;
+  }
+  return pReverseHead;
+}
