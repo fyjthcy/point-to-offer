@@ -1,0 +1,17 @@
+//通过分析，能够得知输出过程可以看作是一个队列。。。
+void PrintFromTopToBottom(BinaryTreeNode* pTreeRoot)
+{
+  if(!pTreeRoot) return;
+  std::deque<BinaryTreeNode *> dequeTreeNode;
+  dequeTreeNode.push_back(pTreeNode);
+  while(dequeTreeNode.size())
+  {
+    BinaryTreeNode *pNode = dequeTreeNode.front();
+    dequeTreeNode.pop_front();
+    printf("%d",pNode->m_nValue);
+    
+    if(pTreeNode->left) dequeTreeNode.push_back(pNode->m_pLeft);
+    if(pTreeNode->right) dequeTreeNode.push_back(pNode->m_pRight);
+    
+  {
+}
