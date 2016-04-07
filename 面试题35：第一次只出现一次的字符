@@ -1,0 +1,19 @@
+//字符常量作下标，表示其ascii码对应的数组偏移量
+char FirstNotRepeatingChar(char * pString)
+{
+  if(pString==NULL) return '\0';
+  unsigned int hashTabel[256];
+  memset(hashTabel,0,sizeof(hashTabel));
+  char * pOperate = pString;
+  while(pOperate!='\0')
+  {
+    hashTabel[*(pOperate++)]++;
+  }
+  pOperate = pString;//重新指回首地址
+  while(pOperate!='\0')
+  {
+    if(hashTabel[*(pOperate++)]==1) return *pOperate;
+    
+  }
+  return '\0';
+}
